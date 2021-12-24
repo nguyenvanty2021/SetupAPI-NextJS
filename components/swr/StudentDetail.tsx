@@ -19,6 +19,15 @@ const StudentDetail: React.FC<StudentDetailProps> = ({ studentId }) => {
       dedupingInterval: MILLISECOND_PER_HOUR,
     },
   )
+  // cách khác
+  // const {data, error} = useSWR("https://url");
+  // if(error) {
+  //   return <div>Failed to load</div>
+  // }
+  // if(!data) {
+  //   // để component loading vào thay thẻ div
+  //   return <div>Loading...</div>;
+  // }
   const handleMutate = () => {
       // khi để = true thì thuộc tính mutate này sẽ thay đổi tất cả những thuộc tính name trong api (trong từng obj)
       // thành tên: "loading..." hết và sau đó nó tiến hành fetch hay call lại api để cập nhật lại data mới và tức thì nó sẽ
